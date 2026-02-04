@@ -4,16 +4,17 @@ import { motion } from 'framer-motion'
 
 // Event configuration - easily editable
 const EVENT_DETAILS = {
-  date: 'March 15, 2026',
+  date: 'February 15, 2026',
   time: '10:00 AM',
   ceremony: {
-    venue: 'St. Mary\'s Cathedral',
-    address: '1111 Gough Street, San Francisco, CA 94109',
+    venue: 'Our Lady of La Salette Parish',
+    address: 'San Jose Del Monte, Bulacan, Philippines',
   },
   reception: {
-    venue: 'The Capitol Ballroom',
-    address: '456 Victor\'s Village Drive, San Francisco, CA 94102',
+    venue: 'Hacienda Isabella',
+    address: 'Tungkong Mangga, San Jose Del Monte, Bulacan',
     time: '12:00 PM onwards',
+    mapLink: 'https://maps.app.goo.gl/3HNRDhqNRtdTZH7B8',
   },
   dressCode: {
     theme: 'District Outfits & Getaway Gear',
@@ -134,6 +135,15 @@ export default function EventDetails() {
                     <span className="text-games-fire">🍽️</span>
                     <span className="font-body">Lunch & Celebration</span>
                   </div>
+                  <a 
+                    href="https://maps.app.goo.gl/3HNRDhqNRtdTZH7B8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 mt-3 px-4 py-2 bg-gradient-to-r from-driver-red to-games-fire text-white text-sm rounded-full hover:opacity-90 transition-opacity"
+                  >
+                    <span>📍</span>
+                    <span>View on Google Maps</span>
+                  </a>
                 </div>
               </div>
             </div>

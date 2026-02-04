@@ -2,39 +2,39 @@
 
 import { motion } from 'framer-motion'
 
-// Gift suggestions themed around the movies
+// Gift suggestions themed around baby needs for a 1.5 year old
 const GIFT_SUGGESTIONS = [
   {
-    category: 'Getaway Gear',
+    category: 'Baby Essentials',
+    icon: '👶',
+    description: 'Daily necessities for our little tribute',
+    items: [
+      { name: 'Diapers & Wipes', emoji: '🧷', link: '#' },
+      { name: 'Baby Milk Formula', emoji: '🍼', link: '#' },
+      { name: 'Baby Toiletries & Bath Set', emoji: '🧴', link: '#' },
+      { name: 'Vitamins & Supplements', emoji: '💊', link: '#' },
+    ]
+  },
+  {
+    category: 'Toddler Gear',
     icon: '🚗',
-    description: 'For the little driver in training',
+    description: 'For our little driver in training',
     items: [
-      { name: 'Toy Cars & Race Tracks', emoji: '🏎️', link: '#' },
-      { name: 'Baby Walker (Car-Shaped)', emoji: '🚙', link: '#' },
-      { name: 'Music Box or Sound Toys', emoji: '🎵', link: '#' },
-      { name: 'Sunglasses (Baby-Safe)', emoji: '🕶️', link: '#' },
+      { name: 'Clothes (1.5-2 years)', emoji: '👕', link: '#' },
+      { name: 'Shoes & Sandals', emoji: '👟', link: '#' },
+      { name: 'Sippy Cups & Utensils', emoji: '🥤', link: '#' },
+      { name: 'Toddler Backpack', emoji: '🎒', link: '#' },
     ]
   },
   {
-    category: 'District Essentials',
-    icon: '🏹',
-    description: 'Survival gear for the newest tribute',
+    category: 'Play & Learn',
+    icon: '🎯',
+    description: 'Toys for our growing champion',
     items: [
-      { name: 'Adventure Storybooks', emoji: '📚', link: '#' },
-      { name: 'Forest-Themed Nursery Decor', emoji: '🌲', link: '#' },
-      { name: 'Mockingjay Plush Toy', emoji: '🦅', link: '#' },
-      { name: 'Archery Set (When Older!)', emoji: '🎯', link: '#' },
-    ]
-  },
-  {
-    category: 'Victor\'s Bounty',
-    icon: '🏆',
-    description: 'Treasures fit for a champion',
-    items: [
-      { name: 'College Fund Contribution', emoji: '🎓', link: '#' },
-      { name: 'Gold Jewelry (Keepsake)', emoji: '💛', link: '#' },
-      { name: 'Premium Baby Care Set', emoji: '✨', link: '#' },
-      { name: 'Family Experience Gift', emoji: '🎢', link: '#' },
+      { name: 'Educational Toys', emoji: '🧩', link: '#' },
+      { name: 'Toy Cars & Vehicles', emoji: '🏎️', link: '#' },
+      { name: 'Storybooks & Picture Books', emoji: '📚', link: '#' },
+      { name: 'Building Blocks', emoji: '🧱', link: '#' },
     ]
   }
 ]

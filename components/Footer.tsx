@@ -46,7 +46,7 @@ export default function Footer() {
               </div>
               <div className="text-left">
                 <h3 className="font-display text-xl text-games-wheat">Ansel Haymitch</h3>
-                <p className="font-body text-xs text-games-gold/60">March 15, 2026</p>
+                <p className="font-body text-xs text-games-gold/60">February 15, 2026</p>
               </div>
             </div>
           </motion.div>

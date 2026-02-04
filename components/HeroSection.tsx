@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 // Event configuration - easily editable
 const EVENT_CONFIG = {
   childName: 'Ansel Haymitch M. Vivas',
-  eventDate: new Date('2026-03-15T10:00:00'),
+  eventDate: new Date('2026-02-15T10:00:00'),
   tagline: "Gear Up for Ansel's Epic Baptism Adventure!",
 }
 
