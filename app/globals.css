@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Oswald:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-driver-blue: #1a365d;
+  --color-driver-red: #dc2626;
+  --color-games-forest: #064e3b;
+  --color-games-fire: #ea580c;
+  --color-games-gold: #fbbf24;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-body text-ansel-dark antialiased;
+    background: linear-gradient(135deg, #fef9f3 0%, #f5f0eb 50%, #fef3c7 100%);
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-heading tracking-wide;
+  }
+  
+  ::selection {
+    background-color: var(--color-driver-red);
+    color: white;
+  }
+}
+
+@layer components {
+  /* Mockingjay-inspired decorative element */
+  .mockingjay-divider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+  
+  .mockingjay-divider::before,
+  .mockingjay-divider::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-games-gold), transparent);
+  }
+  
+  /* Racing stripe accent */
+  .racing-stripe {
+    position: relative;
+  }
+  
+  .racing-stripe::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--color-driver-red), var(--color-games-fire));
+    border-radius: 2px;
+  }
+  
+  /* Fire glow effect */
+  .fire-glow {
+    box-shadow: 
+      0 0 20px rgba(234, 88, 12, 0.3),
+      0 0 40px rgba(234, 88, 12, 0.1);
+  }
+  
+  /* Asphalt texture */
+  .asphalt-bg {
+    background-color: #1f2937;
+    background-image: 
+      radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+  
+  /* District card styling */
+  .district-card {
+    @apply relative overflow-hidden rounded-lg;
+    background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(254,243,199,0.9));
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    backdrop-filter: blur(10px);
+  }
+  
+  .district-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-driver-red), var(--color-games-gold), var(--color-games-fire));
+  }
+  
+  /* Button styles */
+  .btn-tribute {
+    @apply relative px-8 py-3 font-heading uppercase tracking-widest text-sm;
+    background: linear-gradient(135deg, var(--color-driver-red) 0%, var(--color-games-fire) 100%);
+    color: white;
+    border: none;
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-tribute:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
+  }
+  
+  .btn-tribute:active {
+    transform: translateY(0);
+  }
+  
+  /* Input styling */
+  .input-arena {
+    @apply w-full px-4 py-3 font-body;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid transparent;
+    border-bottom: 2px solid var(--color-games-gold);
+    transition: all 0.3s ease;
+  }
+  
+  .input-arena:focus {
+    outline: none;
+    border-color: var(--color-driver-red);
+    background: white;
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.1);
+  }
+  
+  /* Speedometer-style countdown */
+  .speedometer {
+    @apply relative;
+    background: conic-gradient(
+      from 135deg,
+      var(--color-driver-blue) 0deg,
+      var(--color-driver-red) 90deg,
+      var(--color-games-fire) 180deg,
+      var(--color-games-gold) 270deg
+    );
+    border-radius: 50%;
+  }
+  
+  /* Arrow divider */
+  .arrow-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+  
+  .arrow-divider::before,
+  .arrow-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-games-forest), transparent);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-driver-red), var(--color-games-fire), var(--color-games-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-forest-gradient {
+    background: linear-gradient(135deg, var(--color-games-forest), #059669);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Animated background */
+  .animated-gradient {
+    background: linear-gradient(-45deg, #1a365d, #064e3b, #b45309, #dc2626);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Tire track pattern */
+  .tire-tracks {
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 10px,
+      rgba(31, 41, 55, 0.05) 10px,
+      rgba(31, 41, 55, 0.05) 12px
+    );
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f0eb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-driver-red), var(--color-games-fire));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--color-games-fire), var(--color-driver-red));
+}
